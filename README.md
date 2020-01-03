@@ -1,6 +1,8 @@
 graalvm-ce
 =========
 
+[![Build Status](https://travis-ci.org/sirReeall/graalvm-ce.svg?branch=master)](https://travis-ci.org/sirReeall/graalvm-ce)
+
 This role will install [GraalVM Community Edition](https://www.graalvm.org/) via Ansiable on Centos 7.
 
 The precomplied binaries are pulled from [GraalVM's GitHub Releases Page](https://github.com/graalvm/graalvm-ce-builds/releases).
