@@ -1,0 +1,30 @@
+---
+# Based on Jeff Geerling's testing
+# For example:
+# https://github.com/geerlingguy/ansible-role-kibana/blob/master/.travis.yml
+
+language: python
+
+python:
+  - "3.6"
+
+services: docker
+
+env:
+  global:
+    - ROLE_NAME: graalvm-ce
+  matrix:
+    - MOLECULE_DISTRO: centos7
+
+install:
+  # Install test dependencies.
+  - pip install molecule docker pathlib enum
+
+before_script:
+
+script:
+  # Run tests.
+  - molecule test
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
