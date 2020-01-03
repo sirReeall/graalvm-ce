@@ -35,12 +35,12 @@
     - name: Download graalvm-ce
       get_url:
         url: "{{ graalvm_ce_download_url }}"
-        dest: "~/.ansible/tmp/graalvm-ce-java{{ graalvm_ce_java_version }}-linux-amd64-{{ graalvm_ce_version }}.tar.gz"
+        dest: "~/graalvm-ce-java{{ graalvm_ce_java_version }}-linux-amd64-{{ graalvm_ce_version }}.tar.gz"
       when: not isInstalled.stat.exists
 
     - name: Unarchive graalvm
       unarchive:
-        src: "~/.ansible/tmp/graalvm-ce-java{{ graalvm_ce_java_version }}-linux-amd64-{{ graalvm_ce_version }}.tar.gz"
+        src: "~/graalvm-ce-java{{ graalvm_ce_java_version }}-linux-amd64-{{ graalvm_ce_version }}.tar.gz"
         dest: "{{ graalvm_ce_install_location }}"
         creates: "{{ graalvm_ce_install_folder }}"
         remote_src: true
@@ -51,7 +51,7 @@
     - name: Clean up
       file:
         state: absent
-        path: "~/.ansible/tmp/graalvm-ce-java{{ graalvm_ce_java_version }}-linux-amd64-{{ graalvm_ce_version }}.tar.gz"
+        path: "~/graalvm-ce-java{{ graalvm_ce_java_version }}-linux-amd64-{{ graalvm_ce_version }}.tar.gz"
 
     - name: Create a symbolic link
       file:
