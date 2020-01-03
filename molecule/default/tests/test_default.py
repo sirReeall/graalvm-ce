@@ -10,4 +10,3 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 def test_install(host):
     install_location = host.run('/opt/graalvm-ce/bin/java -version')
     assert 'GraalVM CE' in install_location.stderr
-
