@@ -65,5 +65,6 @@
         dest: '/etc/profile.d/java.sh'
         owner: root
         group: root
+      when: graalvm_ce_set_java_home
 
   when: ansible_distribution == "CentOS"
